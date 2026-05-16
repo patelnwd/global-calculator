@@ -6,6 +6,7 @@ import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
 import AppNavigation from "@/components/layouts/app-navigation";
 import { CurrencyProvider } from "@/components/providers/currency-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -28,16 +29,18 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <CurrencyProvider>
-                    <div className="flex min-h-screen flex-col text-slate-900">
-                        <Header />
-                        <AppNavigation />
-                        <div className="flex-1">{children}</div>
-                        <Footer />
-                    </div>
-                </CurrencyProvider>
+                <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+                    <CurrencyProvider>
+                        <div className="flex min-h-screen flex-col">
+                            <Header />
+                            <AppNavigation />
+                            <div className="flex-1">{children}</div>
+                            <Footer />
+                        </div>
+                    </CurrencyProvider>
+                </ThemeProvider>
             </body>
         </html>
     );
