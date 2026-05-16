@@ -1,7 +1,5 @@
-export default function TaxPropertyTaxForm() {
-  return (
-    <form className="space-y-4">
-      <p className="text-gray-600">[Form fields for Tax Property Tax will go here]</p>
-    </form>
-  );
+import GenericCalculator from "@/components/calculators/generic-calculator";
+
+export default function PropertyTaxForm() {
+    return <GenericCalculator id="financial/tax/property-tax" />;
 }

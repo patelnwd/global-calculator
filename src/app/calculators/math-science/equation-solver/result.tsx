@@ -1,7 +1,3 @@
 export default function EquationSolverResult() {
-  return (
-    <section className="mt-4 p-4 border rounded bg-gray-50">
-      <p className="text-gray-600">[Result for Equation Solver will be shown here]</p>
-    </section>
-  );
+    return null;
 }
