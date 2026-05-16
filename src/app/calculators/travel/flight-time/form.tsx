@@ -1,7 +1,5 @@
+import GenericCalculator from "@/components/calculators/generic-calculator";
+
 export default function FlightTimeForm() {
-  return (
-    <form className="space-y-4">
-      <p className="text-gray-600">[Form fields for Flight Time will go here]</p>
-    </form>
-  );
+    return <GenericCalculator id="travel/flight-time" />;
 }
