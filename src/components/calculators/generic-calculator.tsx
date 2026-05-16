@@ -86,17 +86,19 @@ export default function GenericCalculator({ id }: GenericCalculatorProps) {
 
     return (
         <section className="space-y-6">
-            <p className="text-sm text-gray-600">{definition.description}</p>
+            <p className="max-w-3xl text-sm leading-6 text-slate-600">
+                {definition.description}
+            </p>
 
             <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,380px)]">
-                <form className="grid gap-4 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+                <form className="glass-panel grid gap-4 rounded-lg p-5">
                     {definition.fields.map((field) => (
                         <label
                             key={field.key}
-                            className="grid gap-2 text-sm font-medium text-gray-800"
+                            className="grid gap-2 text-sm font-medium text-slate-800"
                         >
                             <span>{field.label}</span>
-                            <div className="flex overflow-hidden rounded-md border border-gray-300 bg-white focus-within:border-violet-500 focus-within:ring-2 focus-within:ring-violet-100">
+                            <div className="glass-input flex overflow-hidden rounded-md">
                                 {field.type === "select" ? (
                                     <select
                                         value={String(values[field.key] ?? "")}
@@ -143,13 +145,13 @@ export default function GenericCalculator({ id }: GenericCalculatorProps) {
                                     />
                                 )}
                                 {field.suffix && (
-                                    <span className="flex min-w-12 items-center justify-center border-l border-gray-200 bg-gray-50 px-3 text-gray-500">
+                                    <span className="flex min-w-12 items-center justify-center border-l border-white/55 bg-white/45 px-3 text-slate-500">
                                         {field.suffix}
                                     </span>
                                 )}
                             </div>
                             {field.helperText && (
-                                <span className="text-xs font-normal leading-5 text-gray-500">
+                                <span className="text-xs font-normal leading-5 text-slate-500">
                                     {field.helperText}
                                 </span>
                             )}
@@ -157,47 +159,47 @@ export default function GenericCalculator({ id }: GenericCalculatorProps) {
                     ))}
                 </form>
 
-                <aside className="rounded-lg border border-violet-100 bg-violet-50 p-5">
-                    <h2 className="text-sm font-semibold uppercase tracking-wide text-violet-700">
+                <aside className="glass-panel rounded-lg p-5">
+                    <h2 className="text-sm font-semibold uppercase tracking-wide text-cyan-700">
                         Results
                     </h2>
                     <div className="mt-4 grid gap-3">
                         {results.map((result, index) => (
                             <div
                                 key={`${result.label}-${index}`}
-                                className="rounded-md border border-violet-100 bg-white p-4"
+                                className="rounded-md border border-white/60 bg-white/58 p-4 shadow-sm backdrop-blur-xl"
                             >
-                                <div className="text-sm text-gray-500">
+                                <div className="text-sm text-slate-500">
                                     {result.label}
                                 </div>
-                                <div className="mt-1 text-2xl font-semibold text-gray-950">
+                                <div className="mt-1 text-2xl font-semibold text-slate-950">
                                     {formatResult(result, currency.symbol)}
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <p className="mt-4 text-xs text-gray-500">
+                    <p className="mt-4 text-xs text-slate-500">
                         Results are estimates for planning and educational use.
                     </p>
                 </aside>
             </div>
 
             {schedule && schedule.rows.length > 0 && (
-                <section className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+                <section className="glass-panel rounded-lg p-5">
                     <div className="flex flex-col gap-1">
-                        <h2 className="text-lg font-semibold text-gray-950">
+                        <h2 className="text-lg font-semibold text-slate-950">
                             {schedule.title}
                         </h2>
                         {schedule.description && (
-                            <p className="text-sm text-gray-600">
+                            <p className="text-sm text-slate-600">
                                 {schedule.description}
                             </p>
                         )}
                     </div>
 
-                    <div className="mt-4 max-h-[32rem] overflow-auto rounded-md border border-gray-200">
+                    <div className="mt-4 max-h-[32rem] overflow-auto rounded-md border border-white/60 bg-white/35 backdrop-blur-xl">
                         <table className="w-full min-w-[720px] border-collapse text-sm">
-                            <thead className="sticky top-0 bg-gray-50 text-left text-xs uppercase tracking-wide text-gray-500">
+                            <thead className="sticky top-0 bg-white/80 text-left text-xs uppercase tracking-wide text-slate-500 backdrop-blur-xl">
                                 <tr>
                                     {schedule.columns.map((column) => (
                                         <th
@@ -218,7 +220,7 @@ export default function GenericCalculator({ id }: GenericCalculatorProps) {
                                         {schedule.columns.map((column) => (
                                             <td
                                                 key={column.key}
-                                                className="px-3 py-2 text-gray-800"
+                                                className="px-3 py-2 text-slate-800"
                                             >
                                                 {formatScheduleValue(
                                                     row[column.key] ?? "",

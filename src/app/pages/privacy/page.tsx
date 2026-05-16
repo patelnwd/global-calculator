@@ -5,8 +5,10 @@ import React from "react";
 
 const PrivacyPolicy: React.FC = () => {
     return (
-        <div className="max-w-4xl mx-auto p-6 space-y-6">
-            <h1 className="text-3xl font-bold text-center">Privacy Policy</h1>
+        <div className="glass-panel mx-auto my-8 max-w-4xl space-y-6 rounded-lg p-6 text-slate-700">
+            <h1 className="text-center text-3xl font-bold text-slate-950">
+                Privacy Policy
+            </h1>
 
             <p>
                 Your privacy is important to us. This Privacy Policy explains how we
@@ -15,7 +17,9 @@ const PrivacyPolicy: React.FC = () => {
             </p>
 
             <section>
-                <h2 className="text-2xl font-semibold mt-4">Information We Collect</h2>
+                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                    Information We Collect
+                </h2>
                 <p>
                     We may collect personal information such as your name, email
                     address, and other details you provide when using our services. We
@@ -25,7 +29,7 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold mt-4">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
                     How We Use Your Information
                 </h2>
                 <p>We use the collected information to:</p>
@@ -38,7 +42,9 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold mt-4">Information Sharing</h2>
+                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                    Information Sharing
+                </h2>
                 <p>
                     We do not sell, trade, or otherwise transfer your personal
                     information to outside parties except as necessary to provide our
@@ -47,7 +53,9 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold mt-4">Cookies and Tracking</h2>
+                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                    Cookies and Tracking
+                </h2>
                 <p>
                     We may use cookies, web beacons, and other tracking technologies to
                     monitor activity and improve our services. You can manage your
@@ -56,7 +64,9 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold mt-4">Your Privacy Rights</h2>
+                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                    Your Privacy Rights
+                </h2>
                 <p>
                     You can request access to, correction, or deletion of your personal
                     information. Please contact us using the information provided below.
@@ -64,7 +74,9 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold mt-4">Changes to This Policy</h2>
+                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                    Changes to This Policy
+                </h2>
                 <p>
                     We may update this Privacy Policy from time to time. Any changes
                     will be posted on this page with an updated effective date.
@@ -72,13 +84,15 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="text-2xl font-semibold mt-4">Contact Us</h2>
+                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                    Contact Us
+                </h2>
                 <p>
                     If you have questions or concerns about this Privacy Policy, you can
                     contact us at:{" "}
                     <a
                         href="mailto:info@example.com"
-                        className="text-blue-600 underline"
+                        className="font-medium text-cyan-700 underline"
                     >
                         info@example.com
                     </a>

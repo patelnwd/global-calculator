@@ -162,13 +162,13 @@ export default function AppNavigation() {
     }
 
     return (
-        <div className="border-b border-gray-200 bg-white">
+        <div className="border-b border-white/35 bg-white/35 backdrop-blur-xl">
             <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 md:flex-row md:items-center md:justify-between">
                 <div className="flex min-w-0 items-center gap-3">
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:bg-gray-50"
+                        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/60 bg-white/50 text-slate-700 shadow-sm hover:bg-white/75"
                         aria-label="Go back"
                         title="Go back"
                     >
@@ -176,7 +176,7 @@ export default function AppNavigation() {
                     </button>
 
                     <nav aria-label="Breadcrumb" className="min-w-0">
-                        <ol className="flex min-w-0 flex-wrap items-center gap-1 text-sm text-gray-500">
+                        <ol className="flex min-w-0 flex-wrap items-center gap-1 text-sm text-slate-500">
                             {breadcrumbs.map((item, index) => {
                                 const isLast = index === breadcrumbs.length - 1;
 
@@ -191,12 +191,12 @@ export default function AppNavigation() {
                                         {item.href && !isLast ? (
                                             <Link
                                                 href={item.href}
-                                                className="rounded px-1.5 py-1 hover:bg-gray-100 hover:text-gray-900"
+                                                className="rounded px-1.5 py-1 hover:bg-white/60 hover:text-slate-950"
                                             >
                                                 {item.label}
                                             </Link>
                                         ) : (
-                                            <span className="px-1.5 py-1 font-medium text-gray-900">
+                                            <span className="px-1.5 py-1 font-medium text-slate-950">
                                                 {item.label}
                                             </span>
                                         )}
@@ -211,8 +211,8 @@ export default function AppNavigation() {
                     <label className="sr-only" htmlFor="global-feature-search">
                         Search all features
                     </label>
-                    <div className="flex h-10 items-center gap-2 rounded-md border border-gray-300 bg-white px-3 text-sm text-gray-700 focus-within:border-violet-500 focus-within:ring-2 focus-within:ring-violet-100">
-                        <Search className="h-4 w-4 shrink-0 text-violet-700" />
+                    <div className="glass-input flex h-10 items-center gap-2 rounded-md px-3 text-sm">
+                        <Search className="h-4 w-4 shrink-0 text-cyan-700" />
                         <input
                             id="global-feature-search"
                             value={query}
@@ -226,7 +226,7 @@ export default function AppNavigation() {
                                     ? `Search features... (${currentItem.label})`
                                     : "Search all features..."
                             }
-                            className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-gray-400"
+                            className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-slate-400"
                             autoComplete="off"
                         />
                         {query ? (
@@ -236,18 +236,18 @@ export default function AppNavigation() {
                                     setQuery("");
                                     setIsPickerOpen(true);
                                 }}
-                                className="rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+                                className="rounded p-1 text-slate-500 hover:bg-white/70 hover:text-slate-950"
                                 aria-label="Clear feature search"
                             >
                                 <X className="h-3.5 w-3.5" />
                             </button>
                         ) : (
-                            <Compass className="h-4 w-4 shrink-0 text-gray-400" />
+                            <Compass className="h-4 w-4 shrink-0 text-slate-400" />
                         )}
                     </div>
 
                     {isPickerOpen && (
-                        <div className="absolute right-0 z-30 mt-2 max-h-96 w-full overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg">
+                        <div className="glass-panel absolute right-0 z-30 mt-2 max-h-96 w-full overflow-hidden rounded-lg">
                             <div className="max-h-96 overflow-y-auto py-2">
                                 {filteredItems.length > 0 ? (
                                     filteredItems.map((item) => (
@@ -255,23 +255,23 @@ export default function AppNavigation() {
                                             key={item.href}
                                             type="button"
                                             onClick={() => navigateTo(item.href)}
-                                            className="block w-full px-3 py-2 text-left hover:bg-violet-50"
+                                            className="block w-full px-3 py-2 text-left hover:bg-white/55"
                                         >
-                                            <span className="block text-sm font-medium text-gray-900">
+                                            <span className="block text-sm font-medium text-slate-950">
                                                 {item.label}
                                             </span>
-                                            <span className="block text-xs text-gray-500">
+                                            <span className="block text-xs text-cyan-700">
                                                 {item.group}
                                             </span>
                                             {item.note && (
-                                                <span className="mt-1 block text-xs leading-5 text-gray-600">
+                                                <span className="mt-1 block text-xs leading-5 text-slate-600">
                                                     {item.note}
                                                 </span>
                                             )}
                                         </button>
                                     ))
                                 ) : (
-                                    <div className="px-3 py-6 text-center text-sm text-gray-500">
+                                    <div className="px-3 py-6 text-center text-sm text-slate-500">
                                         No matching features
                                     </div>
                                 )}
