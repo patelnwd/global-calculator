@@ -47,25 +47,29 @@ export default function CalculatorPage() {
     });
 
     return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold text-violet-700 text-center mb-6">
-                Global Calculator
-            </h1>
+        <div className="container mx-auto px-4 py-10">
+            <div className="mx-auto mb-8 max-w-3xl text-center">
+                <h1 className="text-3xl font-bold text-slate-950">Global Calculator</h1>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                    Search every calculator across finance, health, travel, utility,
+                    math, and construction.
+                </p>
+            </div>
 
             {/* Search & Filter */}
-            <div className="flex flex-col md:flex-row gap-4 mb-8 justify-center">
+            <div className="mx-auto mb-8 flex max-w-3xl flex-col justify-center gap-4 md:flex-row">
                 <input
                     type="text"
                     placeholder="Search calculator..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full md:w-1/3 px-4 py-2 border rounded-xl"
+                    className="glass-input min-h-11 w-full rounded-lg px-4 py-2 md:w-1/2"
                 />
 
                 <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full md:w-1/4 px-4 py-2 border rounded-xl"
+                    className="glass-input min-h-11 w-full rounded-lg px-4 py-2 md:w-1/3"
                 >
                     <option value="all">All Categories</option>
                     {Object.values(calculatorGroups).map((cat) => (
@@ -77,21 +81,21 @@ export default function CalculatorPage() {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                 {filtered.map((calc, idx) => (
                     <a
                         key={idx}
                         href={toAppPath(calc.path)}
-                        className="block p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition"
+                        className="glass-card glass-card-hover block rounded-lg p-6"
                     >
-                        <h2 className="text-lg font-semibold text-violet-700">
+                        <h2 className="text-lg font-semibold text-slate-950">
                             {calc.name}
                         </h2>
-                        <p className="text-gray-500 text-sm mt-2">
+                        <p className="mt-2 text-sm font-medium text-cyan-700">
                             {capitalizeWords(calc.groupKey.split("-").join(" "))}
                         </p>
                         {calc.note && (
-                            <p className="mt-3 text-sm leading-6 text-gray-600">
+                            <p className="mt-3 text-sm leading-6 text-slate-600">
                                 {calc.note}
                             </p>
                         )}
