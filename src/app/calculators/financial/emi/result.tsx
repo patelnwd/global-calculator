@@ -32,45 +32,45 @@ export default function EMIResults({
     formatAmount,
 }: EMIResultsProps) {
     return (
-        <div className="p-6 bg-white rounded-lg shadow flex flex-col justify-between">
+        <div className="glass-panel flex flex-col justify-between rounded-lg p-6">
             <div>
-                <h3 className="text-sm text-gray-500">Monthly EMI</h3>
-                <div className="text-3xl font-bold text-violet-700 mt-2">
+                <h3 className="text-sm text-slate-500">Monthly EMI</h3>
+                <div className="mt-2 text-3xl font-bold text-cyan-700">
                     ₹ {formatAmount(emi)}
                 </div>
 
                 <div className="mt-4 grid grid-cols-2 gap-4 text-sm">
                     <div>
-                        <div className="text-gray-500">Total Payment</div>
+                        <div className="text-slate-500">Total Payment</div>
                         <div className="font-medium">
                             ₹ {formatAmount(totalPayment)}
                         </div>
                     </div>
                     <div>
-                        <div className="text-gray-500">Total Interest</div>
+                        <div className="text-slate-500">Total Interest</div>
                         <div className="font-medium">
                             ₹ {formatAmount(totalInterest)}
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-6 text-sm text-gray-600">
+                <div className="mt-6 text-sm text-slate-600">
                     <p>Loan Amount: ₹ {formatAmount(Number(principal) || 0)}</p>
                     <p>Rate (annual): {Number(annualRate) || 0}%</p>
                     <p>Tenure: {months} months</p>
                 </div>
             </div>
             <div className="mt-6">
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-slate-500">
                     * Results are approximate. Use for informational purposes only.
                 </p>
             </div>
             {showSchedule && schedule.length > 0 && (
                 <div className="mt-6">
-                    <h4 className="font-semibold mb-4">Amortization Schedule</h4>
-                    <table className="w-full text-sm table-auto">
+                    <h4 className="mb-4 font-semibold">Amortization Schedule</h4>
+                    <table className="w-full table-auto text-sm">
                         <thead>
-                            <tr className="text-left text-xs text-gray-500 border-b">
+                            <tr className="border-b text-left text-xs text-slate-500">
                                 <th className="py-2">Month</th>
                                 <th>Payment</th>
                                 <th>Principal</th>
