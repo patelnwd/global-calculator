@@ -5,8 +5,8 @@ import React from "react";
 
 const PrivacyPolicy: React.FC = () => {
     return (
-        <div className="glass-panel mx-auto my-8 max-w-4xl space-y-6 rounded-lg p-6 text-slate-700">
-            <h1 className="text-center text-3xl font-bold text-slate-950">
+        <div className="glass-panel mx-auto my-8 max-w-4xl space-y-6 rounded-lg p-6 text-slate-700 dark:text-slate-300">
+            <h1 className="text-center text-3xl font-bold text-slate-900 dark:text-white">
                 Privacy Policy
             </h1>
 
@@ -17,7 +17,7 @@ const PrivacyPolicy: React.FC = () => {
             </p>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Information We Collect
                 </h2>
                 <p>
@@ -29,7 +29,7 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     How We Use Your Information
                 </h2>
                 <p>We use the collected information to:</p>
@@ -42,7 +42,7 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Information Sharing
                 </h2>
                 <p>
@@ -53,7 +53,7 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Cookies and Tracking
                 </h2>
                 <p>
@@ -64,7 +64,7 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Your Privacy Rights
                 </h2>
                 <p>
@@ -74,7 +74,7 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Changes to This Policy
                 </h2>
                 <p>
@@ -84,7 +84,7 @@ const PrivacyPolicy: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Contact Us
                 </h2>
                 <p>

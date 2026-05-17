@@ -109,7 +109,6 @@ function getBreadcrumbs(pathname: string): BreadcrumbItem[] {
         ...segments.map((segment, index) => {
             const href = `/${segments.slice(0, index + 1).join("/")}`;
             const isLast = index === segments.length - 1;
-
             return {
                 label: titleFromSegment(segment),
                 href: isLast ? undefined : href,
@@ -126,13 +125,10 @@ export default function AppNavigation() {
     const [isPickerOpen, setIsPickerOpen] = useState(false);
     const breadcrumbs = getBreadcrumbs(pathname);
     const currentItem = navigationItems.find((item) => item.href === pathname);
+
     const filteredItems = useMemo(() => {
         const normalizedQuery = query.trim().toLowerCase();
-
-        if (!normalizedQuery) {
-            return navigationItems;
-        }
-
+        if (!normalizedQuery) return navigationItems;
         return navigationItems.filter((item) =>
             item.keywords.includes(normalizedQuery)
         );
@@ -140,35 +136,28 @@ export default function AppNavigation() {
 
     useEffect(() => {
         function closePicker(event: MouseEvent) {
-            if (
-                pickerRef.current &&
-                !pickerRef.current.contains(event.target as Node)
-            ) {
+            if (pickerRef.current && !pickerRef.current.contains(event.target as Node)) {
                 setIsPickerOpen(false);
             }
         }
-
         document.addEventListener("mousedown", closePicker);
         return () => document.removeEventListener("mousedown", closePicker);
     }, []);
 
     function navigateTo(value: string) {
-        if (value && value !== pathname) {
-            router.push(value);
-        }
-
+        if (value && value !== pathname) router.push(value);
         setQuery("");
         setIsPickerOpen(false);
     }
 
     return (
-        <div className="border-b border-white/35 bg-white/35 backdrop-blur-xl">
+        <div className="relative z-30 border-b border-slate-200/70 bg-white/60 backdrop-blur-xl dark:border-cyan-400/12 dark:bg-slate-950/30">
             <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 md:flex-row md:items-center md:justify-between">
                 <div className="flex min-w-0 items-center gap-3">
                     <button
                         type="button"
                         onClick={() => router.back()}
-                        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-white/60 bg-white/50 text-slate-700 shadow-sm hover:bg-white/75"
+                        className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-slate-200/80 bg-white/70 text-slate-600 shadow-sm transition hover:border-cyan-400/40 hover:bg-cyan-50 hover:text-cyan-700 dark:border-cyan-400/20 dark:bg-slate-950/50 dark:text-slate-300 dark:hover:border-cyan-400/45 dark:hover:bg-slate-900/60 dark:hover:text-white"
                         aria-label="Go back"
                         title="Go back"
                     >
@@ -176,27 +165,26 @@ export default function AppNavigation() {
                     </button>
 
                     <nav aria-label="Breadcrumb" className="min-w-0">
-                        <ol className="flex min-w-0 flex-wrap items-center gap-1 text-sm text-slate-500">
+                        <ol className="flex min-w-0 flex-wrap items-center gap-1 text-sm text-slate-500 dark:text-slate-400">
                             {breadcrumbs.map((item, index) => {
                                 const isLast = index === breadcrumbs.length - 1;
-
                                 return (
                                     <li
                                         key={`${item.label}-${index}`}
                                         className="flex items-center gap-1"
                                     >
                                         {index > 0 && (
-                                            <ChevronRight className="h-3.5 w-3.5" />
+                                            <ChevronRight className="h-3.5 w-3.5 text-slate-400 dark:text-slate-600" />
                                         )}
                                         {item.href && !isLast ? (
                                             <Link
                                                 href={item.href}
-                                                className="rounded px-1.5 py-1 hover:bg-white/60 hover:text-slate-950"
+                                                className="rounded px-1.5 py-1 hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-cyan-400/8 dark:hover:text-white"
                                             >
                                                 {item.label}
                                             </Link>
                                         ) : (
-                                            <span className="px-1.5 py-1 font-medium text-slate-950">
+                                            <span className="px-1.5 py-1 font-medium text-slate-900 dark:text-white">
                                                 {item.label}
                                             </span>
                                         )}
@@ -212,7 +200,7 @@ export default function AppNavigation() {
                         Search all features
                     </label>
                     <div className="glass-input flex h-10 items-center gap-2 rounded-md px-3 text-sm">
-                        <Search className="h-4 w-4 shrink-0 text-cyan-700" />
+                        <Search className="h-4 w-4 shrink-0 text-cyan-600 dark:text-cyan-400" />
                         <input
                             id="global-feature-search"
                             value={query}
@@ -226,7 +214,7 @@ export default function AppNavigation() {
                                     ? `Search features... (${currentItem.label})`
                                     : "Search all features..."
                             }
-                            className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-slate-400"
+                            className="min-w-0 flex-1 bg-transparent outline-none"
                             autoComplete="off"
                         />
                         {query ? (
@@ -236,18 +224,18 @@ export default function AppNavigation() {
                                     setQuery("");
                                     setIsPickerOpen(true);
                                 }}
-                                className="rounded p-1 text-slate-500 hover:bg-white/70 hover:text-slate-950"
+                                className="rounded p-1 text-slate-400 transition hover:bg-slate-200 hover:text-slate-900 dark:hover:bg-slate-800/60 dark:hover:text-white"
                                 aria-label="Clear feature search"
                             >
                                 <X className="h-3.5 w-3.5" />
                             </button>
                         ) : (
-                            <Compass className="h-4 w-4 shrink-0 text-slate-400" />
+                            <Compass className="h-4 w-4 shrink-0 text-slate-400 dark:text-slate-500" />
                         )}
                     </div>
 
                     {isPickerOpen && (
-                        <div className="glass-panel absolute right-0 z-30 mt-2 max-h-96 w-full overflow-hidden rounded-lg">
+                        <div className="glass-panel absolute right-0 z-50 mt-2 max-h-96 w-full overflow-hidden rounded-lg">
                             <div className="max-h-96 overflow-y-auto py-2">
                                 {filteredItems.length > 0 ? (
                                     filteredItems.map((item) => (
@@ -255,16 +243,16 @@ export default function AppNavigation() {
                                             key={item.href}
                                             type="button"
                                             onClick={() => navigateTo(item.href)}
-                                            className="block w-full px-3 py-2 text-left hover:bg-white/55"
+                                            className="block w-full px-3 py-2 text-left transition hover:bg-slate-100 dark:hover:bg-slate-800/55"
                                         >
-                                            <span className="block text-sm font-medium text-slate-950">
+                                            <span className="block text-sm font-medium text-slate-900 dark:text-white">
                                                 {item.label}
                                             </span>
-                                            <span className="block text-xs text-cyan-700">
+                                            <span className="block text-xs text-cyan-700 dark:text-cyan-400">
                                                 {item.group}
                                             </span>
                                             {item.note && (
-                                                <span className="mt-1 block text-xs leading-5 text-slate-600">
+                                                <span className="mt-1 block text-xs leading-5 text-slate-500 dark:text-slate-400">
                                                     {item.note}
                                                 </span>
                                             )}

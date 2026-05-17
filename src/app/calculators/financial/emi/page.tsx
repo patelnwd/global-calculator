@@ -81,10 +81,10 @@ export default function EMICalculatorPage() {
     return (
         <div className="flex min-h-screen flex-col">
             <div className="container mx-auto p-6">
-                <h1 className="mb-4 text-3xl font-bold text-slate-950">
+                <h1 className="mb-4 text-3xl font-bold text-slate-900 dark:text-white">
                     EMI Calculator
                 </h1>
-                <p className="mb-6 text-slate-600">
+                <p className="mb-6 text-slate-600 dark:text-slate-400">
                     Quickly calculate EMI, total interest and payment schedule.
                 </p>
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MortgageForm from "./form";
 import MortgageResult from "./result";
 
@@ -16,11 +17,11 @@ export default function MortgagePage() {
             <Breadcrumb>
                 <BreadcrumbList>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                        <BreadcrumbLink asChild><Link href="/">Home</Link></BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/calculators">Calculators</BreadcrumbLink>
+                        <BreadcrumbLink asChild><Link href="/calculators">Calculators</Link></BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
