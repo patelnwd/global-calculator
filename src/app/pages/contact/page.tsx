@@ -22,8 +22,8 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <div className="glass-panel mx-auto my-8 max-w-2xl rounded-lg p-6 text-slate-700">
-            <h1 className="mb-6 text-center text-3xl font-bold text-slate-950">
+        <div className="glass-panel mx-auto my-8 max-w-2xl rounded-lg p-6 text-slate-700 dark:text-slate-300">
+            <h1 className="mb-6 text-center text-3xl font-bold text-slate-900 dark:text-white">
                 Contact Us
             </h1>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Bot, Cpu } from "lucide-react";
 import { capitalizeWords } from "@/lib/utils/string";
 import { calculatorGroups, getCalculatorNote } from "@/lib/constants/calculators";
@@ -70,7 +71,7 @@ export default function CalculatorPage() {
             {/* Cards */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                 {filtered.map((calc, idx) => (
-                    <a
+                    <Link
                         key={idx}
                         href={toAppPath(calc.path)}
                         className="glass-card glass-card-hover ai-card block rounded-lg p-6"
@@ -87,7 +88,7 @@ export default function CalculatorPage() {
                                 {calc.note}
                             </p>
                         )}
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>

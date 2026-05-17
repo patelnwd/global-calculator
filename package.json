@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build --turbopack",
-        "start": "next start",
+        "start": "serve out",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
         "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
