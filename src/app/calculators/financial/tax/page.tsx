@@ -17,10 +17,10 @@ export default function TaxCalculatorPage() {
     return (
         <main className="container mx-auto px-4 py-8">
             <section className="glass-panel rounded-lg p-6">
-                <h1 className="mb-3 text-3xl font-bold text-slate-950">
+                <h1 className="mb-3 text-3xl font-bold text-slate-900 dark:text-white">
                     Tax Calculator
                 </h1>
-                <p className="mb-6 max-w-2xl text-slate-600">
+                <p className="mb-6 max-w-2xl text-slate-600 dark:text-slate-400">
                     Choose the tax calculator that matches the estimate you need.
                 </p>
 
@@ -31,10 +31,10 @@ export default function TaxCalculatorPage() {
                             href={calculator.href}
                             className="glass-card glass-card-hover block rounded-lg p-6"
                         >
-                            <h2 className="text-lg font-semibold text-slate-950">
+                            <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
                                 {calculator.title}
                             </h2>
-                            <p className="mt-2 text-sm text-slate-600">
+                            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
                                 {calculator.description}
                             </p>
                         </Link>

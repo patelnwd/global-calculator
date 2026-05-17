@@ -5,8 +5,8 @@ import React from "react";
 
 const Terms: React.FC = () => {
     return (
-        <div className="glass-panel mx-auto my-8 max-w-4xl space-y-6 rounded-lg p-6 text-slate-700">
-            <h1 className="text-center text-3xl font-bold text-slate-950">
+        <div className="glass-panel mx-auto my-8 max-w-4xl space-y-6 rounded-lg p-6 text-slate-700 dark:text-slate-300">
+            <h1 className="text-center text-3xl font-bold text-slate-900 dark:text-white">
                 Terms and Conditions
             </h1>
 
@@ -17,7 +17,7 @@ const Terms: React.FC = () => {
             </p>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Use of Services
                 </h2>
                 <p>
@@ -28,7 +28,7 @@ const Terms: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Intellectual Property
                 </h2>
                 <p>
@@ -39,7 +39,7 @@ const Terms: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     User Accounts
                 </h2>
                 <p>
@@ -50,7 +50,7 @@ const Terms: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Limitation of Liability
                 </h2>
                 <p>
@@ -61,7 +61,7 @@ const Terms: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Termination
                 </h2>
                 <p>
@@ -72,7 +72,7 @@ const Terms: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Changes to Terms
                 </h2>
                 <p>
@@ -82,7 +82,7 @@ const Terms: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Governing Law
                 </h2>
                 <p>
@@ -93,7 +93,7 @@ const Terms: React.FC = () => {
             </section>
 
             <section>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+                <h2 className="mt-4 text-2xl font-semibold text-slate-900 dark:text-white">
                     Contact Us
                 </h2>
                 <p>
